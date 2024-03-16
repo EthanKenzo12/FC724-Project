@@ -1,0 +1,760 @@
+/*----- Global Styling applied -----*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: sans-serif;
+}
+/*----- Global Styling for theme across the site -----*/
+/*----- Primary, Secondary, Tertiary and Background colours are set -----*/
+:root {
+    --primary-color: #121212;
+    --secondary-color: #ffffff;
+    --tertiary-color: #013766;
+    --background-color: #ffffff;
+}
+/*----- Dark Theme Styling overrides Global Styling theme enabling dark mode toggle -----*/
+/*----- Corresponding Primary, Secondary, Tertiary and Background colours are set -----*/
+.dark-theme{
+    --primary-color: #d3d3d3;
+    --secondary-color: #121212;
+    --tertiary-color: #109bd4;
+    --background-color: #121212;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+}
+/*----- Location and Size of Dark Mode Toggle is defined -----*/
+#icon{
+    width: 30px;
+    cursor: pointer;
+    transform: translateX(-5px);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 100;
+    box-shadow: 0 0 0 2px #ffffff;
+
+}
+/*----- Styling of Background image for Page 1 (Homepage) is defined -----*/
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 0.2)), url(Images/UOGG.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+/*----- Styling of Navigation Bar is defined -----*/
+nav {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+/*----- Styling of Navigation Bar image is defined -----*/
+nav img {
+    display: block;
+    width: 300px;
+    height: auto;
+}
+/*----- Styling of Navigation Bar Image is defined -----*/
+.nav-links{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #121212;
+    text-decoration: none;
+    font-size: 23px;
+}
+.nav-links ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #FFD700;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+/*----- Styling of Welcome to GIC Progress Tracker -----*/
+.text-box{
+    width: 90%;
+    color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 10px 0 40px;
+    font-size: 14px;
+}
+/*----- Further Styling of Welcome to GIC Progress Tracker -----*/
+.text-box h1{
+    color: var(--primary-color);
+    font-size: 60px;
+}
+/*----- Styling of Website message -----*/
+.text-box h2{
+    color: #ffffff;
+    text-shadow:
+        -1px -1px 0 #121212,
+         1px -1px 0 #121212,
+        -1px  1px 0 #121212,
+         1px  1px 0 #121212;
+}
+/*----- Styling of Clickable call-to-action button -----*/
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+/*----- Further Styling of Clickable call-to-action button enabling colour change on hover -----*/
+.hero-btn:hover{
+    border: 1px solid #FFD700;
+    background: #FFD700;
+    transition: 1s;
+}
+/*----- Hiding small window display Icons when viewing on larger screen devices -----*/
+nav .fa-solid{
+    display: none;
+}
+/*----- Styling of All Unboxed h1-tagged text -----*/
+h1{
+    color: var(--primary-color);
+    font-size: 36px;
+    font-weight: 600;
+    transform: translateY(-10px);
+    text-shadow:
+        -1px -1px 0 var(--secondary-color),
+         1px -1px 0 var(--secondary-color),
+        -1px  1px 0 var(--secondary-color),
+         1px  1px 0 var(--secondary-color);
+}
+/*----- Styling of All Unboxed p-tagged text -----*/
+p{
+    color: #777;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px
+}
+/*----- Styling of All Unboxed h3-tagged text -----*/
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+/*----- Adjusted Styling of Various aforementioned classes based on viewing in smaller window -----*/
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 35px;
+    }
+    .text-box h2{
+        font-size: 15px;
+        text-shadow:
+        -1px -1px 0 #121212,
+         1px -1px 0 #121212,
+        -1px  1px 0 #121212,
+         1px  1px 0 #121212;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #FFD700;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa-solid{
+        display:block;
+        color: var(--secondary-color);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    nav img{
+        width: 50%;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .testimonial-col img {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}
+
+/*----- Campus Section -----*/
+/*----- Base Styling of Campus Section -----*/
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+/*----- Styling to divide columns equally into thirds while giving appropriate spacing -----*/
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+/*----- Styling of images in the columns -----*/
+.campus-col img{
+    width: 100%;
+    display: block;
+}
+/*----- Styling to hide text within the image to be revealed on later styling -----*/
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+/*----- Hover effect to darken image when cursor hovers over image -----*/
+.layer:hover {
+    background: rgba(0, 0, 0, 0.2)
+}
+/*----- Styling of text within the image -----*/
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #FFD700;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    transition: 0.5s;
+}
+/*----- Revealing of text within the image on cursor hover -----*/
+.layer:hover h3{
+    bottom: 50%;
+    opacity: 1;
+}
+/*----- Course Section -----*/
+/*----- Base Styling of Course Section -----*/
+.course {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+/*----- Styling of row alignment -----*/
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+/*----- Styling of the columns divided into 2 equal spaces while leaving room for appropriate spacing -----*/
+.course-col{
+    flex-basis: 48%;
+    background: #FFD700;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+/*----- Styling of course column box to give a drop shadow like outline on hover -----*/
+.course-col:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.4)
+}
+/*----- Facilities Section -----*/
+/*----- Base Styling of Facilities Section -----*/
+.facilities {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+}
+/*----- Styling of the columns divided into 3 equal spaces while leaving room for appropriate spacing -----*/
+.facilities-col {
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+/*----- Styling of the images within the columns -----*/
+.facilities-col img{
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 3px;
+}
+/*----- Styling of the text below the images of the facilities corresponding to each column -----*/
+.facilities-col h3{
+    color: var(--primary-color)
+}
+/*----- Testimonials Section -----*/
+/*----- Base Styling of Testimonials Section -----*/
+.testimonials{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+/*----- Styling of the columns divided into 2 equal spaces while leaving room for appropriate spacing -----*/
+.testimonial-col{
+    flex-basis: 45%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: lightblue;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+/*----- Styling of the images within the columns -----*/
+.testimonial-col img{
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+/*----- Styling of the p-tagged text within the columns -----*/
+.testimonial-col p{
+    padding: 0;
+}
+/*----- Styling of the h3-tagged text within the columns -----*/
+.testimonial-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+/*----- Footer Section -----*/
+/*----- Base Styling of Footer Section -----*/
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+/*----- Styling of the h4-tagged text in footer -----*/
+.footer h4{
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+/*----- Styling of the (.icons .fa-brands) -----*/
+.icons .fa-brands{
+    color: var(--tertiary-color);
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+/*----- Styling of the (.fa-brands) only -----*/
+.fa-brands{
+    color: var(--tertiary-color);
+}
+/*----- About Us (Page 2 of the HTML Starts here) -----*/
+/*----- About Us Section -----*/
+/*----- Base Styling of cover image of the Subheader -----*/
+.Sub-Header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.2),rgba(4,9,30,0.2)),url(Images/captoss.webp);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: var(--secondary-color);
+}
+/*----- Base Styling of About Us -----*/
+.about-us{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+/*----- Restyling of the Nav-links when viewed in smaller window, adjusted based on resizing of Subheader -----*/
+.nav-links-2{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.nav-links-2 ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links-2 ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 23px;
+}
+.nav-links-2 ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #FFD700;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+.nav-links-2 ul li:hover::after{
+    width: 100%;
+}
+/*----- Restyling of text-box and it's contents -----*/
+.text-box{
+    width: 90%;
+    color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 10px 0 40px;
+    font-size: 14px;
+}
+/*----- Restyling of the media when viewed on smaller screen to accommodate changes in cover image -----*/
+@media(max-width: 700px){
+    nav a img {
+        display: block;
+        width: 200px;
+        height: auto;
+    }
+    .text-box h1 {
+        font-size: 35px;
+    }
+    .nav-links-2 {
+        position: absolute;
+        background: #FFD700;
+        height: 50vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 0.5s;
+    }
+    .nav-links-2 ul li {
+        display: block;
+    }
+    .nav-links-2 ul li a {
+        color: #121212;
+        text-decoration: none;
+        font-size: 23px;
+    }
+    nav .fa-solid {
+        display: block;
+        color: var(--secondary-color);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+}
+/*----- Styling of the columns divided into 2 equal spaces while leaving room for appropriate spacing -----*/
+.about-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+/*----- Styling of the image for appropriate sizing -----*/
+.about-col img{
+    width: 100%;
+}
+/*----- Styling of the h1-tagged text in the About Us Section -----*/
+.about-col h1{
+    padding-top: 0;
+}
+/*----- Styling of the p-tagged text in the About Us Section -----*/
+.about-col p{
+    padding: 15px 0 25px;
+}
+/*----- Styling of A clickable button that redirect user ot the Survey Page -----*/
+.blue-btn{
+    border: 1px solid var(--tertiary-color);
+    background: transparent;
+    color: var(--tertiary-color);
+}
+/*----- Providing the clickable button with a hover effect for enhanced visibility  -----*/
+.blue-btn:hover{
+    color: var(--primary-color);
+}
+/*----- Gathering Feedback Section -----*/
+/*----- Base Styling of Gathering Feedback Section -----*/
+.reasons {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+/*----- Styling of the columns divided into 2 equal spaces while leaving room for appropriate spacing -----*/
+.reasons-col {
+    flex-basis: 45%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    background: lightblue;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+/*----- Styling of the container housing image -----*/
+.image-container {
+    flex-basis: 50%;
+    text-align: left;
+    position: relative;
+    border-radius: 10px;
+}
+/*----- Styling of the image in the image-container -----*/
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    display: block;
+}
+/*----- Styling of the container housing the text -----*/
+.text-container {
+    flex-basis: 50%;
+    text-align: left;
+}
+/*----- Styling of both the h3-tagged and p-tagged text  -----*/
+.reasons-col h3, .reasons-col p {
+    padding-top: 0;
+}
+/*----- Styling to hide text within the image to be revealed on later styling -----*/
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background 0.5s, opacity 0.5s;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+/*----- Styling to darken image and reveal test when hovering over image -----*/
+.layer:hover {
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+/*----- Styling of the text within the image -----*/
+.layer h3 {
+    color: #FFD700;
+    text-shadow: -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                -1px 1px 0 #000,
+                 1px 1px 0 #000;
+    font-size: 26px;
+}
+/*----- Restyling of the media when viewed on smaller screen to accommodate changes in cover image -----*/
+@media (max-width: 700px){
+    .reasons {
+        width: 90%;
+        padding-top: 50px;
+    }
+
+    .reasons-col {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .image-container,
+    .text-container {
+        flex-basis: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .image-container img {
+        border-radius: 5px;
+    }
+
+    .layer {
+        border-radius: 5px;
+    }
+
+    .reasons-col h3, .reasons-col p {
+        font-size: 14px;
+    }
+}
+/*----- Survey (Page 3 of the HTML Starts here) -----*/
+/*----- Survey -----*/
+/*----- Base Styling of cover image of the header2 -----*/
+.header2 {
+    min-height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 0.2)), url(Images/survey.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-color: var(--primary-color);
+    position: relative;
+    text-align: center;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+/*----- Styling of text under alt_group (ensures visibility when dark mode is toggled) -----*/
+.alt_group{
+    color: var(--primary-color)
+}
+/*----- Styling of the input types text and email of the survey page -----*/
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Make sure padding does not affect the overall width */
+}
+/*----- Styling of the input type radio of the survey page -----*/
+input[type="radio"] {
+    margin-right: 5px;
+    margin-left: 15px;
+}
+/*----- Styling of the radio group class -----*/
+.radio-group {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+/*----- Styling of the text associated with the radio input -----*/
+.radio-group label {
+    font-weight: normal;
+    margin-right: 15px;
+    display: inline-block;
+}
+/*----- Styling to align the label of each radio input to the right -----*/
+.radio-group label input[type="radio"] {
+    margin-right: 5px;
+}
+/*----- Styling of the input type checkbox of the survey page -----*/
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+/*----- Styling of the Submit box of the survey page -----*/
+input[type="submit"] {
+    background-color: #109bd4;
+    color: var(--primary-color);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+/*----- Styling of the hover effect when hovering over Submit button -----*/
+input[type="submit"]:hover {
+    background-color: #FFD700;
+}
+/*----- Styling of div class only -----*/
+div {
+    margin-bottom: 10px;
+}
+/*----- Styling of confirmationDiv only -----*/
+#confirmationDiv {
+    background-color: var(--primary-color);
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 4px;
+    display: none; /* Initially hidden */
+}
+/*----- Styling of confirmationButton only -----*/
+#confirmButton {
+    background-color: #008CBA;
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+/*----- Styling of the hover effect when hovering over Confirm button -----*/
+#confirmButton:hover {
+    background-color: #005f73;
+}
+/*----- Styling for the class for the grade -----*/
+.grade-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+/*----- Styling of the associated label of the grade-group -----*/
+.grade-group label {
+    flex-basis: 20%;
+    min-width: 120px;
+}
+/*----- Styling of the associated input of the grade-group -----*/
+.grade-group input[type="number"] {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/*----- Restyling of the media when viewed on smaller screen to accommodate changes in cover image -----*/
+@media (max-width: 700px){
+    br{
+        display: none;
+    }
+    .radio-group label {
+        display: block; /* Make each label occupy its own line */
+        margin-bottom: 10px; /* Add some space between each radio button */
+    }
+
+    .radio-group label input[type="radio"] {
+        margin-right: 10px; /* Adjust space as needed */
+    }
+
+    /* Adjust the layout of grade input groups for smaller screens */
+    .grade-group {
+        flex-direction: column; /* Stack label and input vertically */
+        align-items: flex-start; /* Align items to the start of the container */
+    }
+
+    .grade-group label {
+        flex-basis: auto; /* Remove the flex-basis */
+        min-width: 0; /* Override min-width */
+        margin-bottom: 5px; /* Add some space between the label and input */
+    }
+
+    .grade-group input[type="number"] {
+        flex-grow: 0; /* Prevent the input from growing */
+        width: 100%; /* Make the input take full width of its container */
+    }
+}
