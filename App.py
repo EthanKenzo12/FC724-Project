@@ -23,3 +23,19 @@ class SurveyForm(FlaskForm):
         ('PM Science & Engineering', 'PM Science & Engineering'),
         ('PM Science & Engineering 2', 'PM Science & Engineering 2')
     ], validators=[DataRequired()])
+    Overall = StringField('Overall, how did you perform academically?')
+    Grade_1 = IntegerField('What was the grade of your 1st Module?')
+    Grade_2 = IntegerField('What was the grade of your 2nd Module?')
+    Grade_3 = IntegerField('What was the grade of your 3rd Module?')
+    Grade_4 = IntegerField('What was the grade of your 4th Module?')
+    Experience = RadioField('Did you enjoy your learning experience here?', choices=[
+        ('Strongly Disagree','Strongly Disagree'),
+        ('Disagree', 'Disagree'),
+        ('Neutral', 'Neutral'),
+        ('Agree', 'Agree'),
+        ('Strongly Agree', 'Strongly Agree'),
+    ])
+    Why_1 = TextAreaField('Why or Why Not?')
+    Suggestions = TextAreaField('Suggestions for improvement', validators=[Length(max=500)])
+    T_and_C = BooleanField("I agree to have the following information shared with GIC", validators=[DataRequired()])
+    Submit = SubmitField('Submit')
