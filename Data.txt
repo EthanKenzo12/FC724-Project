@@ -1,0 +1,16 @@
+FName: Ethan
+LName: Chan
+SNum: P426428
+Gender: Male
+Intake: September 2023
+Email: Ethanchan@gmail.com
+Course: FC Science & Engineering
+Overall: Average
+Grade_1:88
+Grade_2:80
+Grade_3:30
+Grade_4:90
+Experience: Neutral
+Why_1:I feel some subject were alright whereas others needed more help.
+Suggestions:Have focused lessons for those who need the extra support
+--------line break--------
