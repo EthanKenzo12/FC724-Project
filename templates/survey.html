@@ -23,81 +23,89 @@
             <i class="fa-solid fa-bars" onclick="showMenu()"></i>
         </nav>
         <main>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flashes">
+                        {% for message in messages %}
+                            <div class="flash-message">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
         <h1>Student Progress Questionnaire</h1>
+        </main>
+    </section>
         <!---- use of post instead of get, as to not expose data by appending it to the end of the url---->
         <form id="survey" method="post" action="">
             {{ form.hidden_tag() }}
-        </form>
-        </main>
-    </section>
-            <div class="alt_group">
+                <div class="alt_group">
                 {{ form.FName.label }} {{ form.FName(placeholder='John') }}
-            </div>
-            <div class="alt_group">
-                {{ form.LName.label }} {{ form.LName(placeholder='Doe') }}
-            </div>
-            <div class="alt_group">
-                {{ form.SNum.label }} {{ form.SNum(placeholder='P123456') }}
-            </div>
-
-            <div class="radio-group">
-                {{ form.Gender.label }}
-                <br><br>
-                {% for subfield in form.gender %}
-                <div>
-                {{ subfield }} {{ subfield.label }}
                 </div>
-            {% endfor %}
-            </div>
+                <div class="alt_group">
+                {{ form.LName.label }} {{ form.LName(placeholder='Doe') }}
+                </div>
+                <div class="alt_group">
+                {{ form.SNum.label }} {{ form.SNum(placeholder='P123456') }}
+                </div>
 
-            <div class="alt_group">
-                {{ form.Intake.label }} {{ form.Intake() }}
-            </div>
-            <div class="alt_group">
-                {{ form.Email.label }} {{ form.Email(placeholder='John.Doe@gmail.com') }}
-            </div>
-            <div class="alt_group">
-                {{ form.Course.label }} {{ form.Course() }}
-            </div>
-            <div class="alt_group">
-                {{ form.Overall.label }} {{ form.Overall() }}
-            </div>
-            <div class="grade-group">
-                {{ form.Grade_1.label }} {{ form.Grade_1() }}
-            </div>
-            <div class="grade-group">
-                {{ form.Grade_2.label }} {{ form.Grade_2() }}
-            </div>
-            <div class="grade-group">
-                {{ form.Grade_3.label }} {{ form.Grade_3() }}
-            </div>
-            <div class="grade-group">
-               {{ form.Grade_4.label }} {{ form.Grade_4() }}
-            </div>
-            <div class="radio-group">
-                {{ form.Experience.label }}
-                {% for subfield in form.learning_experience %}
+                <div class="radio-group">
+                    {{ form.Gender.label }}
+                    <br><br>
+                    {% for subfield in form.Gender %}
                     <div>
-                        {{ subfield }} {{ subfield.label }}
+                    {{ subfield }} {{ subfield.label }}
                     </div>
                 {% endfor %}
-            </div>
-            <div class="alt_group">
-                {{ form.Why_1.label }} {{ form.Why_1() }}
-            </div>
-            <div class="alt_group">
-                {{ form.Suggestions.label }} {{ form.Suggestions() }}
-            </div>
-            <div class="alt_group">
-                {{ form.T_and_C.label }} {{ form.T_and_C() }}
-            </div>
+                </div>
 
-            <br>
+                <div class="alt_group">
+                    {{ form.Intake.label }} {{ form.Intake() }}
+                </div>
+                <div class="alt_group">
+                    {{ form.Email.label }} {{ form.Email(placeholder='John.Doe@gmail.com') }}
+                </div>
+                <div class="alt_group">
+                    {{ form.Course.label }} {{ form.Course() }}
+                </div>
+                <div class="alt_group">
+                    {{ form.Overall.label }} {{ form.Overall() }}
+                </div>
+                <div class="grade-group">
+                    {{ form.Grade_1.label }} {{ form.Grade_1() }}
+                </div>
+                <div class="grade-group">
+                    {{ form.Grade_2.label }} {{ form.Grade_2() }}
+                </div>
+                <div class="grade-group">
+                    {{ form.Grade_3.label }} {{ form.Grade_3() }}
+                </div>
+                <div class="grade-group">
+                   {{ form.Grade_4.label }} {{ form.Grade_4() }}
+                </div>
+                <div class="radio-group">
+                    {{ form.Experience.label }}
+                    {% for subfield in form.Experience %}
+                        <div>
+                            {{ subfield }} {{ subfield.label }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="alt_group">
+                    {{ form.Why_1.label }} {{ form.Why_1() }}
+                </div>
+                <div class="alt_group">
+                    {{ form.Suggestions.label }} {{ form.Suggestions() }}
+                </div>
+                <div class="alt_group">
+                    {{ form.T_and_C.label }} {{ form.T_and_C() }}
+                </div>
 
-            <div>
-                {{ form.Submit() }}
-            </div>
+                <br>
 
+                <div>
+                    {{ form.Submit() }}
+                </div>
+        </form>
          <section class="footer">
             <h4>About us</h4>
             <p>We are based at Anderson College, 56 Dumbarton Rd, Glasgow G11 6NU</p>
@@ -132,5 +140,5 @@
                 navLinks2.style.right = "-200px";
             }
         </script>
-</body>
+    </body>
 </html>
