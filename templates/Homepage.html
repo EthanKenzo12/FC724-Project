@@ -13,7 +13,7 @@
             <img src="../static/Images/UOG%20logo.jpeg" alt="University of Glasgow Logo">
             <div class="nav-links" id="navLinks">
                 <i class="fa-solid fa-square-xmark" onclick="hideMenu()"></i>
-                <img src="../static/Images/dark.png" id="icon" alt="Dark Mode toggle">
+                <img src="/static/Images/dark.png" id="icon" alt="Dark Mode toggle">
                 <ul>
                     <li><a href="javascript:void(0)" onclick="window.location.reload(true)">Home</a></li>
                     <li><a href="http://localhost:63343/FC724%20Project%201/FC724%20Assignment%201%20&%202/Page%202%20(About%20Us).html?_ijt=230do5bg1hs3ucq6omv9tr6fk">About</a></li>
@@ -158,9 +158,9 @@
         icon.onclick= function (){
             document.body.classList.toggle("dark-theme")
             if(document.body.classList.contains("dark-theme")){
-                icon.src = "Images/light.png"
+                icon.src = "../static/Images/light.png"
             }else{
-                icon.src = "Images/dark.png"
+                icon.src = "../static/Images/dark.png"
             }
         }
 

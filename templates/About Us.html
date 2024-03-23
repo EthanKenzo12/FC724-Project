@@ -13,7 +13,7 @@
             <img src="../static/Images/UOG%20logo.jpeg" alt="University of Glasgow Logo">
             <div class="nav-links-2" id="navLinks2">
                 <i class="fa-solid fa-square-xmark" onclick="hideMenu()"></i>
-                <img src="../static/Images/dark.png" id="icon" alt="Dark Mode toggle">
+                <img src="/static/Images/dark.png" id="icon" alt="Dark Mode toggle">
                 <ul>
                     <li><a href=http://localhost:63343/FC724%20Project%201/FC724%20Assignment%201%20&%202/Page%201%20(Homepage).html?_ijt=230do5bg1hs3ucq6omv9tr6fk>Home</a></li>
                     <li><a href="javascript:void(0)" onclick="window.location.reload(true)">About</a></li>
@@ -34,7 +34,7 @@
                 <a href="http://localhost:63343/FC724%20Project%201/HTML%202/sample3.html?_ijt=ug4pp163il52sp0hklklf8b6lj" class="hero-btn blue-btn">Give us your feedback here!</a>
             </div>
             <div class="about-col">
-                <img src="../static/Images/pplmts.jpeg" alt="About Us">
+                <img src="/static/Images/pplmts.jpeg" alt="About Us">
             </div>
 
         </div>
@@ -115,9 +115,9 @@
             icon.onclick= function (){
                 document.body.classList.toggle("dark-theme")
                 if(document.body.classList.contains("dark-theme")){
-                    icon.src = "Images/light.png"
+                    icon.src = "../static/Images/light.png"
                 }else{
-                    icon.src = "Images/dark.png"
+                    icon.src = "../static/Images/dark.png"
                 }
             }
 
