@@ -25,106 +25,78 @@
         <main>
         <h1>Student Progress Questionnaire</h1>
         <!---- use of post instead of get, as to not expose data by appending it to the end of the url---->
-        <form id="survey" method="post">
+        <form id="survey" method="post" action="">
+            {{ form.hidden_tag() }}
         </form>
         </main>
     </section>
             <div class="alt_group">
-                <label for="FName">First Name:</label>
-                <input type ="text" id="FName" name="FName" placeholder="John" required>
+                {{ form.FName.label }} {{ form.FName(placeholder='John') }}
             </div>
             <div class="alt_group">
-                <label for="LName">Last Name:</label>
-                <input type ="text" id="LName" name="LName" placeholder="Doe" required>
+                {{ form.LName.label }} {{ form.LName(placeholder='Doe') }}
             </div>
             <div class="alt_group">
-                <label for="SNum">Student Number:</label>
-                <input type ="text" id="SNum" name="SNum" maxlength="7" placeholder="P123456" required>
+                {{ form.SNum.label }} {{ form.SNum(placeholder='P123456') }}
             </div>
 
             <div class="radio-group">
-                <label>Gender:</label>
-                <br>
-                <br>
-                <label for="Mc"><input type="radio" id="Mc" name="Gender" value="Male">Male:</label>
-                <label for="Fmc"><input type="radio" id="Fmc" name="Gender" value="Female">Female:</label>
-                <label for="NB"><input type="radio" id="NB" name="Gender" value="Non-Binary">Non-Binary:</label>
+                {{ form.Gender.label }}
+                <br><br>
+                {% for subfield in form.gender %}
+                <div>
+                {{ subfield }} {{ subfield.label }}
+                </div>
+            {% endfor %}
+            </div>
 
+            <div class="alt_group">
+                {{ form.Intake.label }} {{ form.Intake() }}
             </div>
             <div class="alt_group">
-                <label for="Intake">Intake Year:</label>
-                <select id="Intake" name="Intake">
-                    <option value="----Select One----">----Select One----</option>
-                    <option value="September 2023">September 2023</option>
-                    <option value="January 2024">January 2024</option>
-                </select>
+                {{ form.Email.label }} {{ form.Email(placeholder='John.Doe@gmail.com') }}
             </div>
             <div class="alt_group">
-                <label for="Email">Email:</label>
-                <input type ="email" id="Email" name="Email" placeholder="John.Doe@gmail.com" required>
+                {{ form.Course.label }} {{ form.Course() }}
             </div>
             <div class="alt_group">
-                <label for="Course">Programme of Study (What course are you studying?)*:</label>
-                <select id="Course" name="Course">
-                    <option value="----Select One----">----Select One----</option>
-                    <option value="FC Business & Social Science">FC Business & Social Science</option>
-                    <option value="FC Arts & Humanities">FC Arts & Humanities</option>
-                    <option value="FC Science & Engineering">FC Science & Engineering</option>
-                    <option value="PM Business, Economics & Finance">PM Business, Economics & Finance</option>
-                    <option value="PM Law & Social Sciences">PM Law & Social Sciences</option>
-                    <option value="PM Arts & Humanities">PM Arts & Humanities</option>
-                    <option value="PM Science & Engineering">PM Science & Engineering</option>
-                    <option value="PM Science & Engineering 2">PM Science & Engineering 2</option>
-                </select>
-            </div>
-            <div class="alt_group">
-                <label for="Overall">Overall, how did you perform academically?:</label>
-                <input type ="text" id="Overall" name="Overall">
+                {{ form.Overall.label }} {{ form.Overall() }}
             </div>
             <div class="grade-group">
-                <label for="Grade_1">What was the grade for your 1st Module?: <input type ="number" id="Grade_1" name="Grade_1"></label>
+                {{ form.Grade_1.label }} {{ form.Grade_1() }}
             </div>
             <div class="grade-group">
-                <label for="Grade_2">What was the grade for your 2nd Module?: <input type ="number" id="Grade_2" name="Grade_2"></label>
+                {{ form.Grade_2.label }} {{ form.Grade_2() }}
             </div>
             <div class="grade-group">
-                <label for="Grade_3">What was the grade for your 3rd Module?: <input type ="number" id="Grade_3" name="Grade_3"></label>
+                {{ form.Grade_3.label }} {{ form.Grade_3() }}
             </div>
             <div class="grade-group">
-                <label for="Grade_4">What was the grade for your 4th Module?: <input type ="number" id="Grade_4" name="Grade_4"></label>
+               {{ form.Grade_4.label }} {{ form.Grade_4() }}
             </div>
             <div class="radio-group">
-                <label>Did you enjoy your learning experience here?:</label>
-                <br>
-                <br>
-                <label for="SD"><input type="radio" id="SD" name="Experience" value="Strongly Disagree">Strongly Disagree:</label>
-                <label for="D"><input type="radio" id="D" name="Experience" value="Disagree">Disagree:</label>
-                <label for="N"><input type="radio" id="N" name="Experience" value="Neutral">Neutral:</label>
-                <label for="A"><input type="radio" id="A" name="Experience" value="Agree">Agree:</label>
-                <label for="SA"><input type="radio" id="SA" name="Experience" value="Strongly Agree">Strongly Agree:</label>
+                {{ form.Experience.label }}
+                {% for subfield in form.learning_experience %}
+                    <div>
+                        {{ subfield }} {{ subfield.label }}
+                    </div>
+                {% endfor %}
             </div>
             <div class="alt_group">
-                <label for="Why_1">Why or Why Not?:</label>
-                <textarea id="Why_1" name="Why_1"></textarea>
+                {{ form.Why_1.label }} {{ form.Why_1() }}
             </div>
             <div class="alt_group">
-                <label for="suggestions">Suggestions for improvement (max 500 characters):</label>
-                <br>
-                <textarea id="suggestions" name="suggestions" maxlength="500"></textarea>
+                {{ form.Suggestions.label }} {{ form.Suggestions() }}
             </div>
             <div class="alt_group">
-                <label for="T&C">I agree to have the following information shared with GIC*: <input type ="checkbox" id="T&C" name="T&C" required></label>
+                {{ form.T_and_C.label }} {{ form.T_and_C() }}
             </div>
 
             <br>
 
             <div>
-                <input type ="Submit" value="Submit" id="submitButton">
+                {{ form.Submit() }}
             </div>
-        <div id="confirmationDiv" style="display:none;">
-            <p>Please confirm your submission:</p>
-            <button id="confirmButton">Confirm Submission</button>
-        </div>
 
          <section class="footer">
             <h4>About us</h4>
@@ -159,79 +131,6 @@
             function hideMenu() {
                 navLinks2.style.right = "-200px";
             }
-            document.addEventListener("DOMContentLoaded", function () {
-                var form = document.querySelector('form');
-                var confirmationDiv = document.getElementById('confirmationDiv');
-                var timeoutAlertShown = false;
-
-            // Function to validate form data
-            function validateFormData() {
-              var fullName = document.getElementById('name').value;
-              var studentNumber = document.getElementById('student-number').value;
-              // Add more validations as needed
-
-              // Validate full name length
-              if (fullName.length > 100) {
-                alert('Full Name is too long. Maximum 100 characters allowed.');
-                return false;
-              }
-
-              // Validate student number to be numeric and within length
-              if (isNaN(studentNumber) || studentNumber.length > 7) {
-                alert('Invalid Student Number. It must be 7 characters long.');
-                return false;
-              }
-              return true;
-            }
-
-            // Function to handle form submission
-            function handleFormSubmit(event) {
-              event.preventDefault(); // Prevent the form from submitting immediately
-
-              if (validateFormData()) {
-                confirmationDiv.style.display = 'block'; // Show the confirmation area
-              }
-            }
-
-            // Function to handle the final confirmation and submission
-            function confirmAndSubmitData() {
-              if (validateFormData()) {
-                console.log('Data confirmed and would be submitted:', localStorage.getItem('formData'));
-                localStorage.removeItem('formData'); // Clear the temporary saved data
-                confirmationDiv.style.display = 'none'; // Hide the confirmation area
-                form.reset(); // Reset the form fields
-                alert('Data submitted successfully.'); // For demonstration purposes
-              }
-            }
-
-            // Set a timeout for data entry (for example, 10 minutes)
-            setTimeout(function () {
-              if (!timeoutAlertShown) {
-                alert('Session timed out!');
-                timeoutAlertShown = true;
-                // Handle the timeout, such as saving the data or logging out the user
-              }
-            }, 600000); // 10 minutes in milliseconds
-
-            form.addEventListener('submit', handleFormSubmit);
-            document.getElementById('confirmButton').addEventListener('click', confirmAndSubmitData);
-          });
-            document.getElementById('submitButton').addEventListener('click', function(event) {
-        // Prevent the default form submission to show the confirmation dialog
-        event.preventDefault();
-
-        // Show a confirmation dialog
-        var isConfirmed = confirm("Are you sure, you want to submit the form?");
-
-        // Check if the user clicked "OK"
-        if (isConfirmed) {
-            // User confirmed, submit the form programmatically
-            document.getElementById('survey').submit();
-        } else {
-            // User clicked "Cancel", do nothing
-            console.log("Submission cancelled by the user.");
-        }
-    });
         </script>
 </body>
 </html>
