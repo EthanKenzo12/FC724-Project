@@ -3,10 +3,11 @@ from wtforms import StringField, RadioField, SelectField, TextAreaField, Integer
     BooleanField
 from wtforms.validators import DataRequired, Length, Email
 
+
 class SurveyForm(FlaskForm):
     FName = StringField('First Name', validators=[DataRequired()])
     LName = StringField('Last Name', validators=[DataRequired()])
-    StuNum = StringField('Student Number', validators=[DataRequired(), Length(max=7)])
+    SNum = StringField('Student Number', validators=[DataRequired(), Length(max=7)])
     Gender = RadioField('Gender', choices=[('Male', 'Male'), ('Female', 'Female'), ('Non-Binary', 'Non-Binary')],
                         validators=[DataRequired()])
     Intake = SelectField('Intake', choices=[('September 2023', 'September 2023'), ('January 2024', 'January 2024')],
@@ -28,7 +29,7 @@ class SurveyForm(FlaskForm):
     Grade_3 = IntegerField('What was the grade of your 3rd Module?')
     Grade_4 = IntegerField('What was the grade of your 4th Module?')
     Experience = RadioField('Did you enjoy your learning experience here?', choices=[
-        ('Strongly Disagree','Strongly Disagree'),
+        ('Strongly Disagree', 'Strongly Disagree'),
         ('Disagree', 'Disagree'),
         ('Neutral', 'Neutral'),
         ('Agree', 'Agree'),
