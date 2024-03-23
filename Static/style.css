@@ -616,7 +616,7 @@ h3{
 .header2 {
     min-height: 50vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 0.2)), url(Images/survey.jpeg);
+    background-image: linear-gradient(rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 0.2)), url(../static/Images/survey.jpeg);
     background-position: center;
     background-size: cover;
     background-color: var(--primary-color);
@@ -686,14 +686,6 @@ input[type="submit"]:hover {
 div {
     margin-bottom: 10px;
 }
-/*----- Styling of confirmationDiv only -----*/
-#confirmationDiv {
-    background-color: var(--primary-color);
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 4px;
-    display: none; /* Initially hidden */
-}
 /*----- Styling of confirmationButton only -----*/
 #confirmButton {
     background-color: #008CBA;
@@ -726,6 +718,23 @@ div {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+/*----- Styling of flash message to know when the survey has been submitted -----*/
+.flashes {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #109bd4;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: auto;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 /*----- Restyling of the media when viewed on smaller screen to accommodate changes in cover image -----*/
 @media (max-width: 700px){
