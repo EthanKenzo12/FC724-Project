@@ -3,7 +3,10 @@ from wtforms import StringField, RadioField, SelectField, TextAreaField, Integer
     BooleanField
 from wtforms.validators import DataRequired, Length, Email
 
-
+# Creation of classes with their associated following attributes:
+# first_name, last_name, Student number, gender, Intake year, Email, Course
+# overall performance, individual grades, experience, reason for experience.
+# also included T&C checkbox for validation before survey may be submitted
 class SurveyForm(FlaskForm):
     FName = StringField('First Name', validators=[DataRequired()])
     LName = StringField('Last Name', validators=[DataRequired()])
