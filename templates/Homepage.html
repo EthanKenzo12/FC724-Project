@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!---- head defines page title, links to external css (style.css) as well as importing icons from fontawesome---->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIC Progress Tracker/Homepage</title>
@@ -8,6 +9,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.css">
 </head>
 <body>
+    <!---- header section uses UOG logo with alt text for those who use screen readers---->
+    <!---- created classes for dark/light mode toggle as well as menu options for viewing on mobile devices---->
+    <!---- href links allow navigation bar to redirect user to each of the 3 different html pages available---->
+    <!---- contains simple javascript function to refresh page on click ---->
     <section class="header">
         <nav>
             <img src="../static/Images/UOG%20logo.jpeg" alt="University of Glasgow Logo">
@@ -23,6 +28,9 @@
             <i class="fa-solid fa-bars" onclick="showMenu()"></i>
         </nav>
     <div class="text-box">
+        <!---- A header for the welcome to GIC Progress Tracker ---->
+        <!---- show the current campus location ---->
+        <!---- a call-to-action button is available for those who would like to visit UOG's Official webpage ---->
         <h1>Welcome to GIC Progress Tracker</h1>
         <h2>GIC is based on the University of Glasgow's Gilmorehill campus.<br>In partnership with Kaplan International pathways, we provide all you need and more to embark on the road ahead!</h2>
         <br>
@@ -31,6 +39,8 @@
 
     </section>
     <!---------- Campus section (1st page divider) ------>
+    <!---- contains the english translation of the latin motto of UOG (Via, Veritas, Vita) ---->
+    <!---- This set the expectation for new students keen to enroll in GIC or Keen to matriculate into UOG ---->
     <section class="campus">
         <img src="../static/Images/motto%20logo.png" alt="University of Glasgow Motto, Via, Veritas, Vita">
         <h1>Our Motto</h1>
@@ -58,7 +68,9 @@
 
     </section>
     <!---------- Course Page Outline (2nd Page divider) ------>
-
+    <!---- Outlines the main courses that you may expect to find when enrolling in GIC. This shows: ---->
+    <!---- information on the foundation course and what to expect ---->
+    <!---- information on the pre-masters course and what to expect ---->
     <section class ="course">
         <h1>Courses We Offer</h1>
         <p> The road to your degree may be tricky, but we have just the thing for you! <br>These are some of the courses we offer to prepare you for University!</p>
@@ -78,7 +90,10 @@
 
     </section>
     <!---------- Facilities Outline (3nd Page divider) ------>
-
+    <!---- Outlines some of the unique world-class facilities in GIC. This shows: ---->
+    <!---- image and location of the main building ---->
+    <!---- image and location of library (situated at the University Campus) ---->
+    <!---- image and location of one of UOG and GIC student's hotspot (the learning hub) ---->
     <section class ="facilities">
         <h1>Breathing Life Into Education</h1>
         <p>Check out some of the places, where learning happens!</p>
@@ -103,7 +118,7 @@
     </section>
 
     <!---------- Testimonials from our Students (4th Page divider) ------>
-
+    <!---- section shows feedback from past alumni of GIC and their wonderful experience here ---->
     <section class="testimonials">
         <h1>What Our Students Say</h1>
         <p>Here is some lovely feedback from our former students</p>
@@ -136,7 +151,8 @@
         </div>
 
     </section>
-    <!---------- Footer Section ------>
+    <!---- Section Footer---->
+    <!---- footer to contain essential information should user have further questions about the college ---->
     <section class="footer">
         <h4>About us</h4>
         <p>We are based at Anderson College, 56 Dumbarton Rd, Glasgow G11 6NU</p>
@@ -151,6 +167,8 @@
     </section>
 
     <!---------- Javascript toggle Menu ------>
+    <!---- Javascript Function 1 enables light/dark toggle menu---->
+    <!---- Javascript Function 2 hides/reveals menu sidebar when viewing on smaller/mobile devices---->
     <script>
 
         var icon = document.getElementById("icon");
