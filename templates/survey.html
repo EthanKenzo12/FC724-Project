@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!---- head defines page title, links to external css (style.css) as well as importing icons from fontawesome---->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIC Progress Tracker/Survey_Page</title>
@@ -8,6 +9,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.css">
 </head>
 <body>
+    <!---- header section uses UOG logo with alt text for those who use screen readers---->
+    <!---- created classes for dark/light mode toggle as well as menu options for viewing on mobile devices---->
+    <!---- href links allow navigation bar to redirect user to each of the 3 different html pages available---->
+    <!---- contains simple javascript function to refresh page on click ---->
     <section class="header2">
         <nav>
             <img src="../static/Images/UOG%20logo.jpeg" alt="University of Glasgow Logo">
@@ -22,6 +27,7 @@
             </div>
             <i class="fa-solid fa-bars" onclick="showMenu()"></i>
         </nav>
+        <!---- created flash message for user benefit, enabling user to know if form was submitted successfully---->
         <main>
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
@@ -36,6 +42,10 @@
         </main>
     </section>
         <!---- use of post instead of get, as to not expose data by appending it to the end of the url---->
+        <!---- use of alt_groups to style text-based response---->
+        <!---- use of radio_group to style radio buttons and text associated with the radio buttons---->
+        <!---- use of grade_groups to style integer-based response---->
+        <!---- use of checkbox to ensure user has agreed before having their data shared with us---->
         <form id="survey" method="post" action="">
             {{ form.hidden_tag() }}
                 <div class="alt_group">
@@ -106,6 +116,8 @@
                     {{ form.Submit() }}
                 </div>
         </form>
+         <!---- Section Footer---->
+         <!---- footer to contain essential information should user have further questions about the college ---->
          <section class="footer">
             <h4>About us</h4>
             <p>We are based at Anderson College, 56 Dumbarton Rd, Glasgow G11 6NU</p>
@@ -119,8 +131,9 @@
             <p>Powered by <i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i></p>
         </section>
         <!---------- Javascript toggle Menu ------>
+        <!---- Javascript Function 1 enables light/dark toggle menu---->
+        <!---- Javascript Function 2 hides/reveals menu sidebar when viewing on smaller/mobile devices---->
         <script>
-
             var icon = document.getElementById("icon");
 
             icon.onclick= function (){
