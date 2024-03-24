@@ -32,6 +32,7 @@ def form():
     return render_template("survey.html", form=form)
 
 
+@app.route('/')
 @app.route('/home')
 def home():
     return render_template('Homepage.html')
