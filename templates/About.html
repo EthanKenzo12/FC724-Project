@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!---- head defines page title, links to external css (style.css) as well as importing icons from fontawesome---->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIC Progress Tracker/About_Page</title>
@@ -8,6 +9,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.css">
 </head>
 <body>
+    <!---- Sub-Header section uses UOG logo with alt text for those who use screen readers---->
+    <!---- created classes for dark/light mode toggle as well as menu options for viewing on mobile devices---->
+    <!---- href links allow navigation bar to redirect user to each of the 3 different html pages available---->
+    <!---- contains simple javascript function to refresh page on click ---->
     <section class="Sub-Header">
         <nav>
             <img src="../static/Images/UOG%20logo.jpeg" alt="University of Glasgow Logo">
@@ -25,6 +30,8 @@
         <h1>About Us</h1>
     </section>
     <!-----About us content---->
+    <!---- contains some information on our global placing as well as reasons why we need to conduct surveys ---->
+    <!---- button executable given to redirect user to survey page if they are keen to complete the survey ---->
     <section class="about-us">
         <div class="row">
             <div class="about-col">
@@ -40,9 +47,10 @@
         </div>
     </section>
     <section class="reasons">
+        <!---- Link tied to image to redirect user to an official video about GIC ---->
         <h1>Gathering Feedback</h1>
         <div class="row">
-            <div class="reasons-row"> <!-- Rename class to "reasons-row" to avoid confusion with other ".row" -->
+            <div class="reasons-row">
                 <div class="reasons-col">
                     <div class="image-container">
                         <a href="https://www.youtube.com/watch?v=BnzoBn4ffm4">
@@ -52,6 +60,7 @@
                             </div>
                         </a>
                     </div>
+                    <!---- Text container below to illustrate to the user why we conduct surveys ---->
                     <div class="text-container">
                         <h3>Reasons for data collection</h3>
                         <p>- Gauge overall satisfaction.
@@ -68,6 +77,7 @@
                         </p>
                     </div>
                 </div>
+                <!---- Link tied to image to redirect user to survey page if they are keen to complete the survey ---->
                 <div class="reasons-col">
                     <div class="image-container">
                         <a href="http://localhost:63343/FC724%20Project%201/HTML%202/sample3.html?_ijt=ug4pp163il52sp0hklklf8b6lj">
@@ -77,6 +87,7 @@
                             </div>
                         </a>
                     </div>
+                    <!---- Text container below made to quell some concerns users may have about the survey prior to filling it up ---->
                     <div class="text-container">
                         <h3>Addressing common concerns</h3>
                         <p>Is this survey biased or filled with loaded questions?
@@ -93,7 +104,8 @@
             </div>
         </div>
     </section>
-    <!---------- Footer Section ------>
+        <!---- Section Footer---->
+        <!---- footer to contain essential information should user have further questions about the college ---->
         <section class="footer">
             <h4>About us</h4>
             <p>We are based at Anderson College, 56 Dumbarton Rd, Glasgow G11 6NU</p>
@@ -108,6 +120,8 @@
         </section>
 
         <!---------- Javascript toggle Menu ------>
+        <!---- Javascript Function 1 enables light/dark toggle menu---->
+        <!---- Javascript Function 2 hides/reveals menu sidebar when viewing on smaller/mobile devices---->
         <script>
 
             var icon = document.getElementById("icon");
